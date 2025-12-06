@@ -1,0 +1,29 @@
+[package]
+name = "philo"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "philo"
+path = "cli/main.rs"
+
+[[bin]]
+name = "init_config"
+path = "tools/init_config.rs"
+
+[dependencies]
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+walkdir = "2"
+dirs = "5"
+strsim = "0.10"
+chrono = "0.4"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+clap = { version = "4.5", features = ["derive"] }
+indicatif = "0.17"
+console = "0.15"
+
+# İsteğe bağlı (gerçek online arama yapmak istersen):
+# reqwest = { version = "0.12", features = ["json", "gzip", "brotli", "deflate", "rustls-tls"] }
